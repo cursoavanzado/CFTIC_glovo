@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import bean.Coordenadas;
 import entidades.Cliente;
 import entidades.Pedido;
 import entidades.Producto;
+import entidades.Repartidore;
 import modelo.dao.DaoClientes;
 import modelo.dao.DaoPedidos;
+import modelo.dao.DaoRepartidores;
 
 @Service
 public class ServicePedidoImp implements ServicePedido {
@@ -18,6 +21,8 @@ public class ServicePedidoImp implements ServicePedido {
 	DaoPedidos daopedidos; 
 	@Autowired
 	DaoClientes daoclientes;
+	@Autowired
+	DaoRepartidores daorepartidores;
 	
 	@Override
 	public List<Producto> listarProductos() {
@@ -46,5 +51,24 @@ public class ServicePedidoImp implements ServicePedido {
 		daoclientes.cambioTarjeta(idCliente, numTarjeta);
 		
 	}
+	@Override
+	public void altaRepartidor(Repartidore r) {
+		daorepartidores.altaRepartidor(r);
+	}
+	@Override
+	public Coordenadas getLocalizacion(int idRepartidor) {
+		return daorepartidores.getLocalizacion(idRepartidor);
+	}
+
+	@Override
+	public void actualizaLocalizacion(int idRepartidor, double lat, double lon) {
+		daorepartidores.actualizaLocalizacion(idRepartidor, lat, lon);
+	}
+
+	@Override
+	public void actualizaEstado(int idRepartidor, String estado) {
+		daorepartidores.actualizaEstado(idRepartidor, estado);
+	}
+
 
 }
