@@ -35,8 +35,8 @@ public class ServicePedidoImp implements ServicePedido {
 	}
 
 	@Override
-	public void altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario) {
-		daoclientes.altaCliente(edad, nombre, password, tarjeta, telefono, usuario);
+	public Cliente altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario) {
+		return daoclientes.altaCliente(edad, nombre, password, tarjeta, telefono, usuario);
 		
 	}
 

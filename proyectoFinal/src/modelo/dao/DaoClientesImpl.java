@@ -22,9 +22,10 @@ public class DaoClientesImpl implements DaoClientes{
 		em.persist(c);
 	}
 	@Transactional
-	public void altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario) {
+	public Cliente altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario) {
 		Cliente c=new Cliente(edad, nombre, Operativa.encriptarSha256Hexadecimal(password), tarjeta, telefono, usuario);
 		em.persist(c);
+		return c;
 	}
 
 	@Transactional

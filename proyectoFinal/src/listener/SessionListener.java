@@ -1,11 +1,14 @@
 package listener;
 
+import java.util.ArrayList;
+
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import entidades.Cesta;
 import modelo.service.ServicePedido;
 
 /**
@@ -21,7 +24,7 @@ public class SessionListener implements HttpSessionListener {
      * @see HttpSessionListener#sessionCreated(HttpSessionEvent)
      */
     public void sessionCreated(HttpSessionEvent se)  { 
-         
+        se.getSession().setAttribute("carrito", new ArrayList<Cesta>()); 
     }
 
 	/**

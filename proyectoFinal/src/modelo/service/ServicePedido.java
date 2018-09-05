@@ -14,7 +14,7 @@ public interface ServicePedido {
 	
 	List<Pedido> listarPedidosCliente(int idCliente);
 	
-	public void altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario);
+	public Cliente altaCliente(int edad, String nombre, String password, String tarjeta, String telefono, String usuario);
 	
 	public Cliente autenticar(String nombre, String password);
 	
