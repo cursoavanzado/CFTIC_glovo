@@ -20,12 +20,6 @@ public interface ServicePedido {
 	
 	public void cambioTarjeta(int idCliente, String numTarjeta);
 
-	void actualizaLocalizacion(int idRepartidor, double lat, double lon);
-
-	void actualizaEstado(int idRepartidor, String estado);
-
-	Coordenadas getLocalizacion(int idRepartidor);
-
-	void altaRepartidor(Repartidore r);
+	
 
 }

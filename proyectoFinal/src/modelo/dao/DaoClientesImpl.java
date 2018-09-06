@@ -37,7 +37,7 @@ public class DaoClientesImpl implements DaoClientes{
 
 	@Override
 	public Cliente autenticar(String nombre, String password) {
-		String jpql="Select c from Cliente c where c.nombre=1? and c.password=2?";
+		String jpql="Select c from Cliente c where c.nombre=?1 and c.password=?2";
 		TypedQuery<Cliente> tp=em.createQuery(jpql, Cliente.class);
 		tp.setParameter(1, nombre);
 		tp.setParameter(2, Operativa.encriptarSha256Hexadecimal(password) );

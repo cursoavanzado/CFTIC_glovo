@@ -51,24 +51,7 @@ public class ServicePedidoImp implements ServicePedido {
 		daoclientes.cambioTarjeta(idCliente, numTarjeta);
 		
 	}
-	@Override
-	public void altaRepartidor(Repartidore r) {
-		daorepartidores.altaRepartidor(r);
-	}
-	@Override
-	public Coordenadas getLocalizacion(int idRepartidor) {
-		return daorepartidores.getLocalizacion(idRepartidor);
-	}
-
-	@Override
-	public void actualizaLocalizacion(int idRepartidor, double lat, double lon) {
-		daorepartidores.actualizaLocalizacion(idRepartidor, lat, lon);
-	}
-
-	@Override
-	public void actualizaEstado(int idRepartidor, String estado) {
-		daorepartidores.actualizaEstado(idRepartidor, estado);
-	}
+	
 
 
 }
