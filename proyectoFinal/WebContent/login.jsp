@@ -28,7 +28,7 @@
           <input type="checkbox" value="remember-me"> Recordar mis datos
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Acceder</button>
+      <button class="btn btn-lg btn-warning btn-block" type="submit">Acceder</button>
       <p class="mt-5 mb-3 text-muted">&copy; CFTIC 2018</p>
     </form>
 
