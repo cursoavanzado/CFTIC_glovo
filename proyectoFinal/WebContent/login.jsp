@@ -17,8 +17,8 @@
 </head>
 <body class="text-center">
     <form class="form-signin">
-      <img class="mb-4" src="https://glovoapp.com/assets-cdn/images/logo_togo.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Acceso a la lista de alimentos</h1>
+      <img class="mb-4" src="https://glovoapp.com/assets-cdn/images/logo_togo.svg" alt="" width="420" height="150">
+      <h1 class="h3 mb-3 font-weight-normal">Elegir de la lista de alimentos</h1>
       <label for="inputEmail" class="sr-only">Email:</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
       <label for="inputPassword" class="sr-only">Contraseña:</label>
