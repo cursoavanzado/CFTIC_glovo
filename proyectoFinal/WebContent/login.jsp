@@ -16,13 +16,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </head>
 <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="login" method="post" >
       <img class="mb-4" src="https://glovoapp.com/assets-cdn/images/logo_togo.svg" alt="" width="420" height="150">
       <h1 class="h3 mb-3 font-weight-normal">Elegir de la lista de alimentos</h1>
-      <label for="inputEmail" class="sr-only">Email:</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
+      <label for="inputUser" class="sr-only">Usuario:</label>
+      <input type="text" name="user" id="inputUser" class="form-control" placeholder="Usuario" required autofocus>
       <label for="inputPassword" class="sr-only">Contraseña:</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+      <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Contraseña" required>
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Recordar mis datos
