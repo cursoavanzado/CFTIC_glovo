@@ -16,7 +16,7 @@ public class ClienteController {
 	@Autowired
 	ServicePedido servicepedido;
 	
-	@RequestMapping("/login")
+	@RequestMapping(value={"/login"},method= {RequestMethod.POST})
 	public String autenticar(HttpServletRequest request,@RequestParam("user") String u,@RequestParam("pwd") String p ) {
 		Cliente c=servicepedido.autenticar(u, p);
 		if(c!=null) {
@@ -26,7 +26,7 @@ public class ClienteController {
 			return "error";
 	}
 	
-	@RequestMapping("/registrar")
+	@RequestMapping(value={"/registrar"},method= {RequestMethod.POST})
 	public String registrar(HttpServletRequest request,@RequestParam("edad") int e,@RequestParam("nombre") String n,@RequestParam("pwd") String p,
 			@RequestParam("tarjeta") String t,@RequestParam("telefono") String te,@RequestParam("user") String u) {
 		Cliente c=servicepedido.altaCliente(e, n, p, t, te, u);
@@ -34,7 +34,7 @@ public class ClienteController {
 			return "bienvenida";
 		
 	}
-	@RequestMapping("/cambioTarjeta")
+	@RequestMapping(value={"/cambioTarjeta"},method= {RequestMethod.POST})
 	public String CambioTarjeta(HttpServletRequest request,@RequestParam("tarjeta") String t) {
 		Cliente c=(Cliente) request.getSession().getAttribute("usuario");
 		servicepedido.cambioTarjeta(c.getIdcliente(), t);
