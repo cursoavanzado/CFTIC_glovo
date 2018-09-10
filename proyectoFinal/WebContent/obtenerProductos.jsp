@@ -43,7 +43,7 @@
       </div>
 <!-- 
           <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Producto, categoría..." aria-label="Search">
+            <input class="form-control mr-sm-2" type="text" placeholder="Producto, categorÃ­a..." aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
           </form>
  -->
@@ -73,7 +73,7 @@
             <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
             <h2>${p.precio}</h2>
             <p>${p.nombre}</p>
-            <p><a class="btn btn-info" href="/modificarcarrito/${p.idProducto}" role="button">Añadir a la cesta &raquo;</a></p>
+            <p><a class="btn btn-info" href="#" onclick="agregarProducto(${p.idProducto})" role="button">AÃ±adir a la cesta &raquo;</a></p>
           </li><!-- /.col-lg-4 -->
         </c:forEach>
         </ul><!-- /.row -->
@@ -99,5 +99,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script> -->
+<script type="text/javascript">
+//para envio de datos pongo un evento clic en los botones
+ 	function agregarProducto(idProducto){
+		
+		var url = "http://127.0.0.1:8080/servidorREST/rest//modificarcarrito/"+idProducto;
+		
+		$.post(url);
+	}
+	</script>
   </body>
 </html>
