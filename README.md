@@ -79,7 +79,7 @@ dicho estado en el repartidor
 - Para el desarrollo de la aplicación se aplicará el patrón MVC, empleando los
 tecnologías Java EE y frameworks que considere oportuno.
 - Los servicios Web serán implementados mediante REST
-- En la capa cliente se emplearán tecnologías como HTML 5, JavaScript y JQuery.
+- En la capa cliente se emplearán tecnologías como HTML 5, JavaScript y jQuery.
 No se utilizará el framework Angular
 
  ```
