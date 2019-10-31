@@ -11,8 +11,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="repartidores")
-@NamedQuery(name="Repartidore.findAll", query="SELECT r FROM Repartidore r")
-public class Repartidore implements Serializable {
+@NamedQuery(name="Repartidore.findAll", query="SELECT r FROM Repartidor r")
+public class Repartidor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,7 +28,7 @@ public class Repartidore implements Serializable {
 	@OneToMany(mappedBy="repartidore")
 	private List<Pedido> pedidos;
 
-	public Repartidore() {
+	public Repartidor() {
 	}
 
 	public int getIdRepartidor() {

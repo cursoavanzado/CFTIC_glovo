@@ -6,7 +6,7 @@ import bean.Coordenadas;
 import entidades.Cliente;
 import entidades.Pedido;
 import entidades.Producto;
-import entidades.Repartidore;
+import entidades.Repartidor;
 
 public interface ServicePedido {
 	

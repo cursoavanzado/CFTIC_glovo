@@ -9,7 +9,7 @@ import bean.Coordenadas;
 import entidades.Cliente;
 import entidades.Pedido;
 import entidades.Producto;
-import entidades.Repartidore;
+import entidades.Repartidor;
 import modelo.dao.DaoClientes;
 import modelo.dao.DaoPedidos;
 import modelo.dao.DaoRepartidores;
@@ -23,7 +23,7 @@ public class ServiceRepartidoresImp implements ServiceRepartidores {
 	
 	
 	@Override
-	public void altaRepartidor(Repartidore r) {
+	public void altaRepartidor(Repartidor r) {
 		daorepartidores.altaRepartidor(r);
 	}
 	@Override

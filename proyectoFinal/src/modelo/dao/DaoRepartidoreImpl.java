@@ -10,32 +10,32 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import bean.Coordenadas;
-import entidades.Repartidore;
+import entidades.Repartidor;
 import modelo.utilidades.Operativa;
 
 @Repository("DaoRepartidores")
 public class DaoRepartidoreImpl implements DaoRepartidores {
 	private double distancia;
-	Repartidore posibleElegido=null;
+	Repartidor posibleElegido=null;
 	@PersistenceContext(unitName="proyectoFinal")
 	EntityManager em;
 	
 	@Override
-	public void altaRepartidor(Repartidore r) {
+	public void altaRepartidor(Repartidor r) {
 		em.persist(r);
 
 	}
 
 	@Override
 	public Coordenadas getLocalizacion(int idRepartidor) {
-		Repartidore r=em.find(Repartidore.class, idRepartidor);
+		Repartidor r=em.find(Repartidor.class, idRepartidor);
 		Coordenadas loca=new Coordenadas(r.getLatitud(),r.getLongitud());
 		return loca;
 	}
 
 	@Override
 	public void actualizaLocalizacion(int idRepartidor, double lat, double lon) {
-		Repartidore r=em.find(Repartidore.class, idRepartidor);
+		Repartidor r=em.find(Repartidor.class, idRepartidor);
 		r.setLatitud(lat);
 		r.setLongitud(lon);
 		em.merge(r);
@@ -43,24 +43,24 @@ public class DaoRepartidoreImpl implements DaoRepartidores {
 
 	@Override
 	public void actualizaEstado(int idRepartidor, String estado) {
-		Repartidore r=em.find(Repartidore.class, idRepartidor);
+		Repartidor r=em.find(Repartidor.class, idRepartidor);
 		r.setEstado(estado);
 		em.merge(r);
 	}
 	
 	@Override
-	public Repartidore getRepartidoresLibres(Coordenadas c){
+	public Repartidor getRepartidoresLibres(Coordenadas c){
 		String jpql="select r from Repartidore r where r.estado='libre'";
-		Repartidore elegido=selectRepartidor(c,em.createQuery(jpql,Repartidore.class).getResultList());
+		Repartidor elegido=selectRepartidor(c,em.createQuery(jpql,Repartidor.class).getResultList());
 		return elegido;
 	}
 	
 	@Override
-	public Repartidore selectRepartidor(Coordenadas c,List<Repartidore> libres) {
+	public Repartidor selectRepartidor(Coordenadas c,List<Repartidor> libres) {
 		
 		distancia=30000;
-		Map<Repartidore,Double> repartidores=new HashMap<>();
-		for(Repartidore r:libres) {
+		Map<Repartidor,Double> repartidores=new HashMap<>();
+		for(Repartidor r:libres) {
 			repartidores.put(r, Operativa.dameDistancia(c,new Coordenadas(r.getLatitud(),r.getLongitud())));
 		}
 		repartidores.forEach((r,d)->{

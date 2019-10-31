@@ -43,7 +43,7 @@ public class Pedido implements Serializable {
 	//bi-directional many-to-one association to Repartidore
 	@ManyToOne
 	@JoinColumn(name="repartidor")
-	private Repartidore repartidore;
+	private Repartidor repartidore;
 
 	public Pedido() {
 	}
@@ -126,11 +126,11 @@ public class Pedido implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public Repartidore getRepartidore() {
+	public Repartidor getRepartidore() {
 		return this.repartidore;
 	}
 
-	public void setRepartidore(Repartidore repartidore) {
+	public void setRepartidore(Repartidor repartidore) {
 		this.repartidore = repartidore;
 	}
 

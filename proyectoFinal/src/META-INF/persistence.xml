@@ -6,6 +6,6 @@
 		<class>entidades.Cliente</class>
 		<class>entidades.Pedido</class>
 		<class>entidades.Producto</class>
-		<class>entidades.Repartidore</class>
+		<class>entidades.Repartidor</class>
 	</persistence-unit>
 </persistence>

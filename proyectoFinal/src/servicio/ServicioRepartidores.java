@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import bean.Coordenadas;
-import entidades.Repartidore;
+import entidades.Repartidor;
 import modelo.service.ServiceRepartidores;
 
 @CrossOrigin
@@ -27,7 +27,7 @@ public class ServicioRepartidores {
 	
 	
 	@PostMapping(value="alta",consumes=MediaType.APPLICATION_JSON_VALUE)
-	public void registrar(@RequestBody Repartidore r) {
+	public void registrar(@RequestBody Repartidor r) {
 		servicio.altaRepartidor(r);
 	}
 	

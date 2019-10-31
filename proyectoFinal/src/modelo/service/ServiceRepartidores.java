@@ -6,7 +6,7 @@ import bean.Coordenadas;
 import entidades.Cliente;
 import entidades.Pedido;
 import entidades.Producto;
-import entidades.Repartidore;
+import entidades.Repartidor;
 
 public interface ServiceRepartidores {
 	
@@ -16,7 +16,7 @@ public interface ServiceRepartidores {
 
 	Coordenadas getLocalizacion(int idRepartidor);
 
-	void altaRepartidor(Repartidore r);
+	void altaRepartidor(Repartidor r);
 
 	void actualizaUbicacion(int idRepartidor, Coordenadas coords);
 
